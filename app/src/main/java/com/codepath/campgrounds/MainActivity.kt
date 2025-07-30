@@ -20,13 +20,15 @@ fun createJson() = Json {
 }
 
 private const val TAG = "CampgroundsMain/"
-private const val PARKS_API_KEY = BuildConfig.API_KEY
-private const val CAMPGROUNDS_URL =
-    "https://developer.nps.gov/api/v1/campgrounds?stateCode=CA&api_key=${PARKS_API_KEY}"
+private val PARKS_API_KEY = BuildConfig.API_KEY
+private val CAMPGROUNDS_URL =
+    "https://developer.nps.gov/api/v1/campgrounds?api_key=${PARKS_API_KEY}"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var campgroundsRecyclerView: RecyclerView
     private lateinit var binding: ActivityMainBinding
+
+    // TODO: Create campgrounds list
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,7 +38,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         campgroundsRecyclerView = findViewById(R.id.campgrounds)
+
         // TODO: Set up CampgroundAdapter with campgrounds
+
 
         campgroundsRecyclerView.layoutManager = LinearLayoutManager(this).also {
             val dividerItemDecoration = DividerItemDecoration(this, it.orientation)

@@ -10,10 +10,10 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-const val CAMPGROUND_EXTRA = "CAMPGROUND_EXTRA"
+
 private const val TAG = "CampgroundAdapter"
 
-class CampgroundAdapter(private val context: Context, private val campgrounds: List<Campground>) :
+class CampgroundAdapter(private val context: Context) :
     RecyclerView.Adapter<CampgroundAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -22,37 +22,31 @@ class CampgroundAdapter(private val context: Context, private val campgrounds: L
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val campground = campgrounds[position]
-        holder.bind(campground)
+        // TODO: Get the individual campground and bind to holder
     }
 
-    override fun getItemCount() = campgrounds.size
+    override fun getItemCount() = 0 // Fix me!
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
 
-        private val imageView = itemView.findViewById<ImageView>(R.id.campgroundImage)
-        private val nameTextView = itemView.findViewById<TextView>(R.id.campgroundName)
-        private val locationTextView = itemView.findViewById<TextView>(R.id.campgroundLocation)
+        // TODO: Create member variables for any view that will be set
 
         init {
             itemView.setOnClickListener(this)
         }
 
         fun bind(campground: Campground) {
-            nameTextView.text = campground.name
-            locationTextView.text = campground.location
+            // TODO: Set item views based on views and data model
 
-            Glide.with(context)
-                .load(campground.imageUrl)
-                .into(imageView)
         }
 
         override fun onClick(v: View?) {
-            val campground = campgrounds[absoluteAdapterPosition]
-            val intent = Intent(context, CampgroundDetailActivity::class.java)
-            intent.putExtra(CAMPGROUND_EXTRA, campground)
-            context.startActivity(intent)
+            // TODO: Get selected campground
+
+
+            // TODO: Navigate to Details screen and pass selected campground
+
         }
     }
 }
