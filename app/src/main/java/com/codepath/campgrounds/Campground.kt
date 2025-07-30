@@ -1,11 +1,19 @@
 package com.codepath.campgrounds
 
-import java.io.Serializable
+import android.support.annotation.Keep
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
-// Data class representing a campground
+// TODO: Create a data class for the Data Response
+
+
+// TODO: Implement remaining keys of the Campground data class
+@Keep
+@Serializable
 data class Campground(
-    val name: String,
-    val location: String,
-    val description: String,
-    val imageUrl: String
-) : Serializable
+    @SerialName("name")
+    val name: String?,
+) : java.io.Serializable
+
+
+// TODO: Create a data class for the Image Response

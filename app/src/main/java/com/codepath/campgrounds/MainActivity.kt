@@ -22,7 +22,7 @@ fun createJson() = Json {
 private const val TAG = "CampgroundsMain/"
 private val PARKS_API_KEY = BuildConfig.API_KEY
 private val CAMPGROUNDS_URL =
-    "https://developer.nps.gov/api/v1/campgrounds?stateCode=CA&api_key=${PARKS_API_KEY}"
+    "https://developer.nps.gov/api/v1/campgrounds?api_key=${PARKS_API_KEY}"
 
 class MainActivity : AppCompatActivity() {
     private lateinit var campgroundsRecyclerView: RecyclerView
